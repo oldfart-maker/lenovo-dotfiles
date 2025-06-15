@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+niri msg action move-window-to-workspace --focus false "scratchpad"
+
