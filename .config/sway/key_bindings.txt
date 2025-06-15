@@ -1,0 +1,62 @@
+launch keybindings				:bindsym $mod+t
+launch launcher					:bindsym $mod+d
+launch runner					:bindsym $alt+F2
+launch asroot					:bindsym $mod+r
+launch network					:bindsym $mod+n
+launch powermenu				:bindsym $mod+x
+launch music					:bindsym $mod+m
+launch screenshot				:bindsym $mod+s
+launch bluetooth				:bindsym $mod+b
+launch editor					:bindsym $mod+Shift+e
+launch file explorer				:bindsym $mod+Shift+f
+launch browser					:bindsym $mod+Shift+b
+launch terminal					:bindsym $mod+Return
+launch vmware (windows-11-arch)			:bindsym $mod+Shift+w
+launch lockscreen				:bindsym $alt+Control+l
+launch notes					:bindsym $mod+p
+launch active windows				:bindsym $mod+c
+launch calculator				:bindsym $mod+Shift+x
+launch gotop					:bindsym $alt+Control+h
+focus left	 				:bindsym $mod+left
+focus down					:bindsym $mod+down
+focus up					:bindsym $mod+up
+focus right					:bindsym $mod+right
+focus parent					:bindsym $mod+a
+focus child					:bindsym $mod+z
+focus next					:bindsym $mod+Tab
+focus floating/tiling				:bindsym $mod+Shift+space
+move left					:bindsym $mod+Shift+left
+move down					:bindsym $mod+Shift+down
+move up						:bindsym $mod+Shift+up
+move right					:bindsym $mod+Shift+right
+move prev workspace				:bindsym $mod+Home
+move focused to workspace and follow		:bindsym $mod+Shift+m
+move floating to center	      			:bindsym $mod+$alt+c
+move to cursor/mouse	 			:bindsym $mod+$alt+p
+layout stacking					:bindsym $mod+Shift+s
+layout tabbed					:bindsym $mod+Shift+t
+layout default					:bindsym $mod+Shift+d
+layout toggle					:bindsym $mod+Shift+l
+layout toggle split				:bindsym $mod+Shift+v
+layout split toggle				:bindsym $mod+g
+layout split horizontally			:bindsym $mod+h
+layout split vertically				:bindsym $mod+v
+layout gaps mode				:bindsym $mod+Shift+g
+window toggle floating				:bindsym $mod+space
+window toggle full screen			:bindsym $mod+f
+window kill					:bindsym $mod+q
+window focus parent				:bindsym $mod+a
+window sticky floating				:bindsym $mod+o
+window toggle border style			:bindsym $mod+y
+window resize 	     				:bindsym $mod+Shift+r
+window opacity					:bindsym $mod+Shift+o
+scratchpad move					:bindsym $mod+Shift+minus
+scratchpad show					:bindsym $mod+minus
+screenshot mode 				:bindsym $mod+s
+reload config					:bindsym $mod+Shift+c
+Available					:bindsym $mod+Shift+Return
+Available					:bindsym $mod+$alt+Return
+Available					:bindsym $alt+Control+v
+Available					:bindsym $alt+Control+r
+
+

@@ -1,0 +1,71 @@
+##-- Style -------------------------------
+default_border pixel 3
+default_floating_border pixel 5
+smart_borders off
+
+titlebar_border_thickness 2
+titlebar_padding 6 6
+title_align center
+
+gaps inner 10
+gaps outer 0
+
+##-- Colors ------------------------------
+#set $sway_cl_col_bg #121212
+#set $sway_cl_col_fg #f3f3f3
+#set $sway_cl_col_in #D8D8D8
+#set $sway_cl_col_afoc #ECECEC
+#set $sway_cl_col_ifoc #ECECEC
+#set $sway_cl_col_ufoc #1f1f1f
+#set $sway_cl_col_urgt #F2F2F2
+#set $sway_cl_col_phol #121212
+
+# class                  border              backgr.             text              indicator         child_border
+#client.focused           $sway_cl_col_afoc   $sway_cl_col_afoc   $sway_cl_col_bg   $sway_cl_col_in   $sway_cl_col_afoc
+#client.focused_inactive  $sway_cl_col_ifoc   $sway_cl_col_ifoc   $sway_cl_col_bg   $sway_cl_col_in   $sway_cl_col_ifoc
+#client.unfocused         $sway_cl_col_ufoc   $sway_cl_col_ufoc   $sway_cl_col_fg   $sway_cl_col_in   $sway_cl_col_ufoc
+#client.urgent            $sway_cl_col_urgt   $sway_cl_col_urgt   $sway_cl_col_fg   $sway_cl_col_in   $sway_cl_col_urgt
+#client.placeholder       $sway_cl_col_phol   $sway_cl_col_phol   $sway_cl_col_fg   $sway_cl_col_in   $sway_cl_col_phol
+#client.background        $sway_cl_col_bg
+
+set $base00 #0c0c0c
+set $base01 #2f2f2f
+set $base02 #535353
+set $base03 #767676
+set $base04 #b9b9b9
+set $base05 #cccccc
+set $base06 #dfdfdf
+set $base07 #f2f2f2
+set $base08 #e74856
+set $base09 #c19c00
+set $base0A #f9f1a5
+set $base0B #16c60c
+set $base0C #61d6d6
+set $base0D #3b78ff
+set $base0E #b4009e
+set $base0F #13a10e
+# End flavours
+
+#Property Name          Border    BG       Text    Indicator Child Border
+client.focused          $base05   $base0D  $base00  $base0D  $base0D
+client.focused_inactive $base01   $base01  $base05  $base03  $base01
+client.unfocused        $base01   $base00  $base05  $base01  $base01
+client.urgent           $base08   $base08  $base00  $base08  $base08
+client.placeholder      $base00   $base00  $base05  $base00  $base00
+client.background       $base07
+
+
+##-- Gtk themes ------------------------------
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Manhattan'
+    gsettings set $gnome-schema icon-theme 'Luv-Folders-Dark'
+    gsettings set $gnome-schema cursor-theme 'Qogirr'
+    gsettings set $gnome-schema font-name 'Noto Sans 9'
+}
+
+##-- Set Opacity ----------------------------
+set $opacity 0.8
+for_window [class=".*"] opacity $opacity
+for_window [app_id=".*"] opacity $opacity
