@@ -1,0 +1,74 @@
+view kill						:Super+q
+view toggle float					:Super+Space
+view toggle full screen					:Super+F
+view swap next/previous view				:Super+Shift+(left,right)
+view move (floating)					:Super+Alt+(left,down,up,right)
+view move (mouse floating)				:Super+Btn (left)
+view move snap to screen edges (floating)		:Super+Alt+(H,J,K,L)
+view move next/previous output				:Super+Shift+(J,K)
+view set scratchpad tag					:Super+Shift+O
+view toggle from/to scratchpad				:Super+O
+view bump top of layout stack				:Super+E
+view resize float	 				:Super+Control+(left,down,up,right)
+view resize (mouse floating)				:Super+Btn (right)
+
+#--- FILTILE -------------------------------------------------------------------------------
+tile flip  						:Super+Z
+tile pad						:Super+C
+tile move split left/right (5)				:Super+(left,right)
+tile diminish +- (20)	   				:Super+(up,down)
+tile diminish +- (200)					:Super+Shift(up,down)
+#-- END FILTILE ----------------------------------------------------------------------------
+
+#--- WIDERIVER -----------------------------------------------------------------------------
+layout monocole			| n |			:Alt+Up
+layout wide			|-| |-|			:Alt+Down
+layout left			| |-|			:Alt+Left
+layout right			|-| |			:Alt+Right
+layout toggle						:Alt+Space
+layout change ratio (+0.025)				:Alt+Plus
+layout change ratio (0.35)				:Alt+Equal
+layout change ratio (-0.025)				:Alt+Minus
+layout add view to master (+1)				:Control+Plus
+layout reset master (1)					:Control+Equal
+layout remove view from master (-1)			:Control+Minus
+layout stack even					:Control+E
+layout stack dwindle					:Control+W
+layout stack diminish					:Control+I
+layout shuffle views through master next		:Super+Right
+layout shuffle views through master previous		:Super+Left
+#-- END WIDERIVER --------------------------------------------------------------------------
+
+#-- FLOW -----------------------------------------------------------------------------------
+focus tags next (flow app)				:Super+O
+focus tags previous (flow app)				:Super+Shift+O
+#-- END FLOW -------------------------------------------------------------------------------
+
+focus view next/previous				:Super+(J,K)
+focus output next/previous				:Super+Shift+(J,K)
+
+workspace show view(s) for tag (0-8)			:Super+(1-9)
+workspace set view with tag (0-8) - e.g. move		:Super+Shift+(1-9)
+workspace set view with tag (0-8) - e.g. copy		:Super+Alt+(1-9)
+workspace toggle view(s) with tag (0-8) - e.g. get	:Super+Control+(1-9)
+
+launch terminal						:Super+Return
+launch file manager					:Super+Shift+F
+launch editor						:Super+Shift+E
+launch browser						:Super+Shift+W
+launch notes						:Super+Shift+N
+launch Pi Imager					:Super+Shift+R
+launch launcher						:Super+D
+launch runner						:Alt+F2
+launch bluetooth					:Super+B
+launch powermenu					:Super+X
+launch music						:Super+M
+launch network						:Super+N
+launch asroot						:Super+R
+launch screenshot					:Super+S
+launch colorpicker					:Super+P
+
+system lock screen					:Control+Alt+L
+system dismiss notification				:Control+space
+system exit    						:Control+delete
+

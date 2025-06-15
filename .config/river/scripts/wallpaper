@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
+##
+## Set Wallpaper in River
+
+WALLPAPER='/home/username/Pictures/wallpapers/us3p54j3ksn61.jpg'
+
+swaybg --output '*' --mode fill --image "$WALLPAPER"

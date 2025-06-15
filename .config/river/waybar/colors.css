@@ -1,0 +1,13 @@
+/** ********** Colors ********** **/
+@define-color background     #212534;
+@define-color background-alt #2b3044;
+@define-color foreground     #cad3d8;
+@define-color selected       #F9B1A3;
+@define-color black          #212534;
+@define-color red            #8FB8B5;
+@define-color green          #B6B9B8;
+@define-color yellow         #EBB89F;
+@define-color blue           #F9B1A3;
+@define-color magenta        #CACAB8;
+@define-color cyan           #91BBCB;
+@define-color white          #cad3d8;

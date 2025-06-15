@@ -1,0 +1,304 @@
+#!/bin/sh
+export PATH=$PATH:$HOME/.cargo/bin
+# This is the example configuration file for river.
+#
+# If you wish to edit this, you will probably want to copy it to
+# $XDG_CONFIG_HOME/river/init or $HOME/.config/river/init first.
+#
+# See the river(1), riverctl(1), and rivertile(1) man pages for complete
+# documentation.
+
+# Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
+
+
+
+## TERMINAL BINDING ##########################################################
+# Note: Load this first in case all hell breaks loose so you at least
+# can get to a CLI.
+riverctl map normal Super Return spawn foot
+
+## SET SCRIPT GLOBALS ########################################################
+river_dir="~/.config/river"
+script_dir="~/.config/river/scripts"
+
+## STARTUP APPS ##############################################################
+riverctl spawn "dbus-update-activation-environment DISPLAY WAYLAND_DISPLAY XDG_SESSION_TYPE XDG_CURRENT_DESKTOP"
+riverctl spawn "swayidle -w timeout 1200 $script_dir/lockscreen"
+riverctl spawn "nm-applet --indicator"
+riverctl spawn "$script_dir/wallpaper"
+riverctl spawn "$script_dir/notifications"
+riverctl spawn "$script_dir/statusbar"
+riverctl spawn mpd
+
+## CONFIGURE OUTPUTS ########################################################
+riverctl spawn "wlr-randr -output HDMI-A-1 -mode 1920x1080 -pos 0,0"
+riverctl spawn "wlr-randr -output HDMI-A-2 -mode 1920x1080 -pos 1920,0"
+riverctl spawn "wlr-randr -output HDMI-A-3 -mode 1920x1080 -pos 3840,0"
+
+## CONFIGURE INPUTS #########################################################
+# riverctl set-repeat 50 200
+
+# touchpad=$(riverctl list-inputs | rg -i "touchpad")
+# riverctl input "$touchpad" tap enabled
+# riverctl input "$touchpad" drag disabled
+# riverctl input "$touchpad" pointer-accel 0.35
+# riverctl input "$touchpad" scroll-factor 1.30
+# riverctl input "$touchpad" accel-profile adaptive
+# riverctl input "$touchpad" natural-scroll enabled
+# riverctl input "$touchpad" disable-while-typing enabled
+
+## CONFIGURE KEY BINDINGS - APPLICATIONS ####################################
+# Super+G Keybindings App
+riverctl map normal Super G spawn "$script_dir/rofi_bindings"
+
+# Super+D Launcher
+riverctl map normal Super D spawn "$script_dir/rofi_launcher"
+
+# Alt+F2 Runner
+riverctl map normal Alt F1 spawn "$script_dir/rofi_runner"
+
+# Super+B Bluetooth
+riverctl map normal Super B spawn "$script_dir/rofi_bluetooth"
+
+# Super+X Powermenu
+riverctl map normal Super X spawn "$script_dir/rofi_powermenu"
+
+# Super+M Music
+riverctl map normal Super M spawn "$script_dir/rofi_music"
+
+# Super+N Network
+riverctl map normal Super N spawn "$script_dir/rofi_network"
+
+# Super+R Asroot
+riverctl map normal Super R spawn "$script_dir/rofi_asroot"
+
+# Super+S Screenshot
+riverctl map normal Super S spawn "$script_dir/rofi_screenshot"
+
+# Super+Shift+F File Manager
+riverctl rule-add -app-id 'thunar' float
+riverctl map normal Super+Shift F spawn "thunar ~/Downloads"
+
+# Super+Shift+E Editor
+riverctl map normal Super+Shift E spawn "emacs"
+
+# Super+Shift+W Browser
+riverctl map normal Super+Shift W spawn "vivaldi-snapshot"
+
+# Super+Shift+N Notepad
+riverctl rule-add -app-id 'pluma' float
+riverctl rule-add -app-id 'pluma' position 720 400
+riverctl rule-add -app-id 'pluma' dimensions 500 600
+riverctl map normal Super+Shift N spawn "pluma"
+
+# Open RPI Imager as root
+riverctl map normal Super+Shift R spawn "foot -e sudo -E rpi-imager"
+
+## CONFIGURE KEY BINDINGS - SYSTEM #########################################
+# OEM Screenshot
+riverctl map normal None Print spawn "$scripts_dir/screenshot --now"
+
+## CONFIGURE KEY BINDINGS - RIVERWM ########################################
+# Super+Q to close the focused view
+riverctl map normal Super Q close
+
+# Super+F to toggle fullscreen
+riverctl map normal Super F toggle-fullscreen
+
+# Super+J and Super+K to focus the next/previous view in the layout stack
+riverctl map normal Super J focus-view next
+riverctl map normal Super K focus-view previous
+
+# Super+Shift+<--> to swap the focused view with the next/previous
+# view in the layout stack
+riverctl map normal Super+Shift right swap next
+riverctl map normal Super+Shift left swap previous
+
+# Super+{J,K} to focus the next/previous output
+riverctl map normal Super K focus-output next
+riverctl map normal Super J focus-output previous
+
+# Super+Shift+{J,K} to send the focused view to the next/previous output
+riverctl map normal Super+Shift K send-to-output next
+riverctl map normal Super+Shift J send-to-output previous
+
+# Super+E to bump the focused view to the top of the layout stack
+riverctl map normal Super E zoom
+
+# Super+Alt+{left,down,up,right} to move views
+riverctl map normal Super+Alt Left move left 100
+riverctl map normal Super+Alt Down move down 100
+riverctl map normal Super+Alt Up move up 100
+riverctl map normal Super+Alt Right move right 100
+
+# Super+Alt+{H,J,K,L} to snap views to screen edges
+riverctl map normal Super+Alt H snap left
+riverctl map normal Super+Alt J snap down
+riverctl map normal Super+Alt K snap up
+riverctl map normal Super+Alt L snap right
+
+# Super+Control+Shift+{left,down,up,right} to resize views
+riverctl map normal Super+Control Left resize horizontal -100
+riverctl map normal Super+Control Up resize vertical 100
+riverctl map normal Super+Control Down resize vertical -100
+riverctl map normal Super+Control Right resize horizontal 100
+
+# Super + Left Mouse Button to move views
+riverctl map-pointer normal Super BTN_LEFT move-view
+
+# Super + Right Mouse Button to resize views
+riverctl map-pointer normal Super BTN_RIGHT resize-view
+
+# Super + Middle Mouse Button to toggle float
+riverctl map-pointer normal Super BTN_MIDDLE toggle-float
+
+for i in $(seq 1 9)
+do
+    tags=$((1 << ($i - 1)))
+
+    # Super+[1-9] to focus tag [0-8]
+    riverctl map normal Super $i set-focused-tags $tags
+
+    # Super+Shift+[1-9] to tag focused view with tag [0-8]
+    riverctl map normal Super+Shift $i set-view-tags $tags
+
+    # Super+Control+[1-9] to toggle focus of tag [0-8]
+    riverctl map normal Super+Control $i toggle-focused-tags $tags
+
+    # Super+Shift+Control+[1-9] to toggle tag [0-8] of focused view
+    riverctl map normal Super+Alt $i toggle-view-tags $tags
+done
+
+# Super+O, Super+Shift+O cycle tags forward / backward (Flo App)
+riverctl map normal Super O spawn "flow cycle-tags next"
+riverctl map normal Super+Shift O spawn "flow cycle-tags previous"
+
+# Super+0 retrieve from scratchpad, Super+Shift+0 send to scratchpad
+scratch=$((1 << 30))
+riverctl map normal Super 0 toggle-focused-tags $scratch
+riverctl map normal Super+Shift 0 set-view-tags $scratch
+# Set spawn tagmask to ensure new windows don't have the scratchpad tag unless
+# explicitly set.
+all_but_scratch_tag=$(( ((1 << 32) - 1) ^ $scratch))
+riverctl spawn-tagmask ${all_but_scratch_tag}
+
+# Super+Space to toggle float
+riverctl map normal Super Space toggle-float
+
+# Declare a passthrough mode. This mode has only a single mapping to return to
+# normal mode. This makes it useful for testing a nested wayland compositor
+riverctl declare-mode passthrough
+
+# Super+F11 to enter passthrough mode
+riverctl map normal Super F11 enter-mode passthrough
+
+# Super+F11 to return to normal mode
+riverctl map passthrough Super F11 enter-mode normal
+
+# Various media key mapping examples for both normal and locked mode which do
+# not have a modifier
+for mode in normal locked
+do
+    riverctl map $mode None XF86AudioRaiseVolume  spawn "$script_dir/volume --inc"
+    riverctl map $mode None XF86AudioLowerVolume  spawn "$script_dir/volume --dec"
+    riverctl map $mode None XF86AudioMute         spawn "$script_dir/volume --toggle"
+    riverctl map $mode None XF86AudioMicMute      spawn "$script_dir/volume --toggle-mic"
+
+    # Control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
+    riverctl map $mode None XF86AudioMedia spawn "playerctl play-pause"
+    riverctl map $mode None XF86AudioPlay  spawn "playerctl play-pause"
+    riverctl map $mode None XF86AudioPrev  spawn "playerctl previous"
+    riverctl map $mode None XF86AudioNext  spawn "playerctl next"
+
+    # Control screen backlight brightness with brightnessctl (https://github.com/Hummer12007/brightnessctl)
+    riverctl map $mode None XF86MonBrightnessUp   spawn "$script_dir/brightness --inc"
+    riverctl map $mode None XF86MonBrightnessDown spawn "$script_dir/brightness --dec"
+done
+
+## THEME ####################################################################
+background_color="0x0F1B25"
+focused_border="0x71ABB9"
+unfocused_border="0x162837"
+urgent_border="0x467687"
+
+riverctl rule-add ssd
+riverctl border-width 3
+riverctl border-color-focused $focused_border
+riverctl border-color-unfocused $unfocused_border
+riverctl border-color-urgent $urgent_border
+# riverctl xcursor-theme "Qogirr" "16"
+riverctl background-color $background_color
+
+# Archcraft defaults
+gsettings set "org.gnome.desktop.interface" gtk-theme "Arc-Dark"
+gsettings set "org.gnome.desktop.interface" icon-theme "Arc-Circle"
+gsettings set "org.gnome.desktop.interface" font-name "Noto Sans 9"
+gsettings set "org.gnome.desktop.interface" cursor-theme "Qogirr"
+gsettings set "org.gnome.desktop.interface" cursor-size "16"
+
+## RULES ####################################################################
+# Make all views with an app-id that starts with "float" and title "foo" start floating.
+riverctl rule-add -app-id 'float*' -title 'foo' float
+
+# Make all views with app-id "bar" and any title use client-side decorations
+riverctl rule-add -app-id "bar" csd
+
+## INITIAL LAYOUT/BEHAVIOUR #################################################
+riverctl focus-follows-cursor "normal"
+riverctl default-attach-mode "bottom"
+riverctl hide-cursor timeout 5000
+riverctl hide-cursor when-typing enabled
+riverctl set-cursor-warp on-focus-change
+
+#-- WIDERIVER ------------------------------------------------------------------------
+riverctl map normal Alt Up            send-layout-cmd wideriver "--layout monocle"
+riverctl map normal Alt Down          send-layout-cmd wideriver "--layout wide"
+riverctl map normal Alt Left          send-layout-cmd wideriver "--layout left"
+riverctl map normal Alt Right         send-layout-cmd wideriver "--layout right"
+
+riverctl map normal Alt Space         send-layout-cmd wideriver "--layout-toggle"
+
+riverctl map normal Alt Plus          send-layout-cmd wideriver "--ratio +0.025"
+riverctl map normal Alt Equal         send-layout-cmd wideriver "--ratio 0.35"
+riverctl map normal Alt Minus         send-layout-cmd wideriver "--ratio -0.025"
+
+riverctl map normal Control Plus      send-layout-cmd wideriver "--count +1"
+riverctl map normal Control Equal     send-layout-cmd wideriver "--count 1"
+riverctl map normal Control Minus     send-layout-cmd wideriver "--count -1"
+
+riverctl map normal Control E         send-layout-cmd wideriver "--stack even"
+riverctl map normal Control W         send-layout-cmd wideriver "--stack dwindle"
+riverctl map normal Control I         send-layout-cmd wideriver "--stack diminish"
+
+riverctl map normal Super Right send-layout-cmd \
+	 wideriver "--count +1 && riverctl focus-view next"
+riverctl map normal Super Left send-layout-cmd \
+	 wideriver "--count -1 && riverctl focus-view previous"
+#-- WIDERIVER END --------------------------------------------------------------------
+
+# Set the default layout generator to be rivertile and start it.
+# River will send the process group of the init0 executable SIGTERM on exit.
+# set layout manager
+riverctl default-layout wideriver
+
+# start layout manager
+wideriver \
+    --layout                       wide        \
+    --layout-alt                   left        \
+    --stack                        even        \
+    --count-master                 1           \
+    --ratio-master                 0.50        \
+    --count-wide-left              0           \
+    --ratio-wide                   0.35        \
+    --no-smart-gaps                            \
+    --inner-gaps                   10          \
+    --outer-gaps                   5           \
+    --border-width                 3           \
+    --border-width-monocle         4           \
+    --border-width-smart-gaps      3           \
+    --border-color-focused         "0x93a1a1"  \
+    --border-color-focused-monocle "0x586e75"  \
+    --border-color-unfocused       "0x586e75"  \
+    --log-threshold                info        \
+   > "/tmp/wideriver.${XDG_VTNR}.${USER}.log" 2>&1 &
+

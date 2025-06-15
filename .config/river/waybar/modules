@@ -1,0 +1,217 @@
+// Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
+//
+// Waybar modules configuration
+{
+// waybar-backlight
+    "backlight": {
+		"interval": 2,
+		"align": 0,
+		"rotate": 0,
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", ""],
+		// Commands to execute on events
+        "on-click": "",
+        "on-click-middle": "",
+        "on-click-right": "",
+        "on-update": "",
+        "on-scroll-up": "light -A 5%",
+        "on-scroll-down": "light -U 5%",
+        "smooth-scrolling-threshold": 1,
+    },
+
+// waybar-battery
+    "battery": {
+		"interval": 60,
+		"align": 0,
+		"rotate": 0,
+		"full-at": 100,
+		"design-capacity": false,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-full": "{icon} Full",
+        "format-alt": "{icon} {time}",
+        "format-icons": ["", "", "", "", ""],
+        "format-time": "{H}h {M}min",
+        "tooltip": true,
+    },
+
+// waybar-bluetooth
+    "bluetooth": {
+        "format": " {status}",
+        "format-on": " {status}",
+        "format-off": " {status}",
+        "format-disabled": " {status}",
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias}, {device_battery_percentage}%",
+        "tooltip": true,
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "~/.config/river/scripts/rofi_bluetooth",
+        "on-click-right": "blueman-manager",
+    },
+
+// waybar-clock
+    "clock": {
+	"interval": 60,
+	"align": 0,
+	"rotate": 0,
+        //"timezone": "America/New_York",
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": " {:%I:%M %p}",
+        "format-alt": " {:%a %b %d, %G}"
+    },
+
+// waybar-cpu
+
+// waybar-custom
+    "custom/menu": {
+        "format": "漣  ",
+        "tooltip": false,
+        "on-click": "$HOME/.config/river/scripts/rofi_launcher",
+        "on-click-right": "$HOME/.config/river/scripts/rofi_runner",
+    },
+
+    "custom/themes": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "$HOME/.config/river/theme/theme.sh --pywal",
+        "on-click-right": "$HOME/.config/river/theme/theme.sh --default",
+    },
+
+// waybar-disk
+
+// waybar-idle-inhibitor
+    "idle_inhibitor": {
+         "format": "{icon}",
+         "format-icons": {
+             "activated": "",
+             "deactivated": ""
+         },
+         "timeout": 30
+    },
+
+// waybar-inhibitor
+// waybar-keyboard-state
+// waybar-memory
+
+// waybar-spotify
+    "custom/spotify": {
+        "exec": "$HOME/.config/river/waybar/spotify",
+        "interval": 1,
+        "format": "{}",
+        "tooltip": true,
+        "max-length": 45,
+        "on-click": "playerctl play-pause",
+        "on-click-middle": "playerctl previous",
+        "on-click-right": "playerctl next",
+        "on-scroll-up": "playerctl position 05+",
+        "on-scroll-down": "playerctl position 05-",
+        "smooth-scrolling-threshold": 1,
+    },
+
+// waybar-mpd
+    "mpd": {
+        "interval": 2,
+        "unknown-tag": "N/A",
+
+        "format": "{artist} - {title} {stateIcon}",
+        "format-disconnected": " Disconnected",
+        "format-paused": "{artist} - {title} {stateIcon}",
+        "format-stopped": "Stopped ",
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)",
+		// Commands to execute on events
+        "on-click": "mpc toggle",
+        "on-click-middle": "alacritty --class 'alacritty-float,alacritty-float' --config-file ~/.config/river/alacritty/alacritty.yml -e ncmpcpp",
+        "on-click-right": "mpc next",
+        "on-update": "",
+        "on-scroll-up": "volume --inc",
+        "on-scroll-down": "volume --dec",
+        "smooth-scrolling-threshold": 1,
+    },
+
+// waybar-network
+    "network": {
+		"interval": 5,
+        //"interface": "wlan*", // (Optional) To force the use of this interface, set it for netspeed to work
+        "format-wifi": " {essid}",
+        "format-ethernet": " {ipaddr}/{cidr}",
+        "format-linked": " {ifname} (No IP)",
+        "format-disconnected": "睊 Disconnected",
+        "format-disabled": "睊 Disabled",
+        "format-alt": " {bandwidthUpBits} |  {bandwidthDownBits}",
+        "tooltip-format": " {ifname} via {gwaddr}",
+    },
+
+// waybar-pulseaudio
+    "pulseaudio": {
+        //"format": "{volume}% {icon} {format_source}",
+        "format": "{icon} {volume}% {format_source}",
+        "format-muted": " Mute",
+        "format-bluetooth": " {volume}% {format_source}",
+        "format-bluetooth-muted": " Mute",
+        "format-source": " {volume}%",
+        "format-source-muted": " Mute",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "scroll-step": 5.0,
+	// Commands to execute on events
+        "on-click": "pulsemixer --toggle-mute",
+        "on-click-right": "pulsemixer --toggle-mute",
+        "smooth-scrolling-threshold": 1,
+    },
+
+// waybar-sndio
+// waybar-states
+
+// waybar-river-tags
+   "river/tags": {
+        "num-tags": 9,
+    },
+
+// waybar-river-layout
+//   "river/layout": {
+//   	"format": "{icon}",
+//      "min-length": 4,
+//	"format-icons": {
+//	   "left": "[]=",
+//	   "bottom": "TTT",
+//	   "top": "ꓕꓕꓕ",
+//	   "right": "=[]",
+//	}
+//    },
+
+// waybar-river-window
+    "river/window": {
+        "max-length": 50,
+    },
+
+// waybar-temperature
+
+// waybar-tray
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
+
+// waybar-wlr-taskbar
+// waybar-wlr-workspaces
+}
