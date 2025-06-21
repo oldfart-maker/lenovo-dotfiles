@@ -13,7 +13,7 @@ Mod+T			      	      { spawn "thunar ~/Downloads"; }
 Mod+Shift+W			      { spawn "firefox"; }
 Mod+Shift+N			      { spawn "pluma"; }
 
-Mod+Return	      		      { spawn "foot"; }
+Mod+Return	      		      { spawn "alicritty"; }
 Super+Alt+L 		      	      { spawn "swaylock"; }
 
 Mod+P				      {spawn "~/.config/niri/scripts/send_to_scratchpad"; }

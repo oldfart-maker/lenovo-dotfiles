@@ -5,7 +5,7 @@
     "include": "~/.config/niri/waybar/modules",
     "name": "main-bar", 			// Waybar name
     "id": "main-bar", 				// Waybar id
-    "layer": "top", 				// Waybar at top layer
+    "layer": "bottom", 				// Waybar at top layer
     //"mode": "dock", 				// Display mode (dock|hide|invisible|overlay)
     "exclusive": true, 				// Request an exclusive zone from the compositor
     "passthrough": false, 			// Pass any pointer events to the window under the bar

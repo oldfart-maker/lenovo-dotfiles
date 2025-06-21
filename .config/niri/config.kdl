@@ -1,21 +1,23 @@
+// ## ENVIRONMENT  ###########################################################
 environment {
 	    DISPLAY ":1"
 }
 
 // ## STARTUP APPS  ###########################################################
 spawn-at-startup "dbus-update-activation-environment DISPLAY WAYLAND_DISPLAY XDG_SESSION_TYPE XDG_CURRENT_DESKTOP"
-spawn-at-startup "swayidle -w timeout 1200 ~/.config/niri/scripts/lockscreen"
+spawn-at-startup "swayidle -w timeout 100 ~/.config/niri/scripts/lockscreen"
 spawn-at-startup "nm-applet --indicator"
 spawn-at-startup "~/.config/niri/scripts/wallpaper"
 spawn-at-startup "~/.config/niri/scripts/notifications"
 spawn-at-startup "~/.config/niri/scripts/statusbar"
 spawn-at-startup "mpd"
+spawn-at-startup "niriswitcher"
 
-spawn-at-startup "gsettings set 'org.gnome.desktop.interface' gtk-theme 'Arc-Dark'"
-spawn-at-startup "gsettings set 'org.gnome.desktop.interface' icon-theme 'Arc-Circle'"
-spawn-at-startup "gsettings set 'org.gnome.desktop.interface' font-name 'Noto Sans 9'"
-spawn-at-startup "gsettings set 'org.gnome.desktop.interface' cursor-theme 'Qogirr'"
-spawn-at-startup "gsettings set 'org.gnome.desktop.interface' cursor-size '16'"
+// spawn-at-startup "gsettings set 'org.gnome.desktop.interface' gtk-theme 'Arc-Dark'"
+// spawn-at-startup "gsettings set 'org.gnome.desktop.interface' icon-theme 'Arc-Circle'"
+// spawn-at-startup "gsettings set 'org.gnome.desktop.interface' font-name 'Noto Sans 9'"
+// spawn-at-startup "gsettings set 'org.gnome.desktop.interface' cursor-theme 'Qogirr'"
+// spawn-at-startup "gsettings set 'org.gnome.desktop.interface' cursor-size '16'"
 
 spawn-at-startup "xwayland-satellite > ~/Downloads/xwlog-file.log 2>&1"
 
@@ -36,7 +38,11 @@ workspace "cameras" {
 	  open-on-output "HDMI-A-3"
 }
 
-workspace "win11-vm" {
+workspace "virtbox" {
+	  open-on-output "HDMI-A-3"
+}
+
+workspace "element" {
 	  open-on-output "HDMI-A-3"
 }
 
@@ -156,7 +162,9 @@ layout {
 
     default-column-width {}
 
-    // draw-border-with-background`.
+    // draw-border-with-background
+
+    background-color "transparent"
 
     focus-ring {
 
@@ -235,11 +243,10 @@ layout {
         color "#ffc87f80"
         gradient from="#ffbb6680" to="#ffc88080" angle=45 relative-to="workspace-view"
     }
-
 }
 
 // ## COMPOSITOR / OTHER CONFIGURATION ########################################
-// prefer-no-csd
+prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // screenshot-path null
@@ -289,15 +296,19 @@ animations {
 
 }
 
+cursor {
+    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-size 12
+    hide-when-typing
+    //hide-after-inactive-ms 1000
+}
+
 // ## OVERVIEW SETTINGS ############################################################
 overview {
-	 // zoom 0.40
-	 // backdrop-color "#777777"
 	 backdrop-color "#566870"
-	 // backdrop-color "#1e1e2e"
     	 zoom 0.625
 	 workspace-shadow {
-	 	// off
+	 	off
 	}
 }
 
@@ -306,10 +317,14 @@ overview {
 window-rule {
     default-column-width {}
     geometry-corner-radius 15
-    match is-active=true
     clip-to-geometry true
     draw-border-with-background false
-    opacity 0.85
+    opacity 0.60
+}
+
+window-rule {
+    match is-active=true
+    opacity 1.0
 }
 
 //	# App behaviour
@@ -319,7 +334,7 @@ window-rule {
 }
 
 window-rule {
-	    match app-id="Spotify"
+	    match app-id="spotify"
 	    open-on-workspace "spotify"
 	    open-maximized true
 }
@@ -334,13 +349,21 @@ window-rule {
 	    match app-id="org.cctv-viewer.cctv-viewer"
 	    open-on-workspace "cameras"
 	    open-maximized true
+	    opacity 1.0
 }
 
 window-rule {
 	    match app-id="VirtualBox Manager"
-	    open-on-workspace "win11-vm"
+	    open-on-workspace "virtbox"
 	    open-maximized true
 }
+
+window-rule {
+	    match app-id="Element"
+	    open-on-workspace "element"
+	    open-maximized true
+}
+
 
 layer-rule {
 // This is not working the way I would like. I want the
@@ -348,7 +371,7 @@ layer-rule {
 // When changing to "true" the wallpaper disappears.
 	   match namespace="^wallpaper$"
 	   match namespace="^waybar$"
-	   place-within-backdrop false
+	   place-within-backdrop true
 }
 
 // ## KEY BINDINGS ############################################################
@@ -359,6 +382,7 @@ binds {
     Mod+X			      { spawn "~/.config/niri/scripts/rofi_powermenu"; }
     Mod+M			      { spawn "~/.config/niri/scripts/rofi_music"; }
     Mod+N			      { spawn "~/.config/niri/scripts/rofi_network"; }
+    Mod+Shift+D			      { spawn "~/.config/niri/scripts/rofi_showwindows"; }
 
     Mod+E			      { spawn "emacs"; }
     Mod+T			      { spawn "thunar"; }
@@ -517,4 +541,10 @@ binds {
     Ctrl+Alt+Delete 		       { quit; }
 
     // Mod+Shift+P 		       { power-off-monitors; }
+    
+    Alt+Tab			       repeat=false { spawn "niriswitcherctl" "show" "--window"; }
+    Alt+Shift+Tab 		       repeat=false { spawn "niriswitcherctl" "show" "--window"; }
+    Alt+Grave 			       repeat=false { spawn "niriswitcherctl" "show" "--workspace"; }
+    Alt+Shift+Grave 		       repeat=false { spawn "niriswitcherctl" "show" "--workspace"; }
+
 }
