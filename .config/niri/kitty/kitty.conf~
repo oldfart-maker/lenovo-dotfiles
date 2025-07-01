@@ -8,10 +8,10 @@
 ## ----------------------------------------------------------------
 
 # include colorscheme
-include ~/.config/niri/kitty/colors.conf
+include ~/.config/river/kitty/colors.conf
 
 # include fonts
-include ~/.config/niri/kitty/fonts.conf
+include ~/.config/river/kitty/fonts.conf
 
 ## ----------------------------------------------------------------
 

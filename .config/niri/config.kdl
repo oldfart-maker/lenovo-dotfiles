@@ -4,22 +4,31 @@ environment {
 }
 
 // ## STARTUP APPS  ###########################################################
-spawn-at-startup "dbus-update-activation-environment DISPLAY WAYLAND_DISPLAY XDG_SESSION_TYPE XDG_CURRENT_DESKTOP"
-spawn-at-startup "swayidle -w timeout 100 ~/.config/niri/scripts/lockscreen"
-spawn-at-startup "nm-applet --indicator"
+// spawn-at-startup "dbus-update-activation-environment DISPLAY WAYLAND_DISPLAY XDG_SESSION_TYPE XDG_CURRENT_DESKTOP"
+spawn-at-startup "sh" "-c" "swayidle -w timeout 600 '~/.config/niri/scripts/lockscreen'"
 spawn-at-startup "~/.config/niri/scripts/wallpaper"
 spawn-at-startup "~/.config/niri/scripts/notifications"
 spawn-at-startup "~/.config/niri/scripts/statusbar"
-spawn-at-startup "mpd"
-spawn-at-startup "niriswitcher"
+spawn-at-startup "spotify"
+spawn-at-startup "element-desktop"
+// spawn-at-startup "googlemessages"
+spawn-at-startup "beeper"
+spawn-at-startup "google-calendar-nativefier-dark"
+spawn-at-startup "vesktop"
+spawn-at-startup "geary"
+spawn-at-startup "xwayland-satellite"
+spawn-at-startup "niriusd"
 
-// spawn-at-startup "gsettings set 'org.gnome.desktop.interface' gtk-theme 'Arc-Dark'"
-// spawn-at-startup "gsettings set 'org.gnome.desktop.interface' icon-theme 'Arc-Circle'"
-// spawn-at-startup "gsettings set 'org.gnome.desktop.interface' font-name 'Noto Sans 9'"
-// spawn-at-startup "gsettings set 'org.gnome.desktop.interface' cursor-theme 'Qogirr'"
-// spawn-at-startup "gsettings set 'org.gnome.desktop.interface' cursor-size '16'"
-
-spawn-at-startup "xwayland-satellite > ~/Downloads/xwlog-file.log 2>&1"
+// ## THEME ##################################################################
+// # Note: these settings are for gnome, non-gnome based apps do not use
+// # these settings. For example, the cursor-theme and cursor-size need
+// # to be syncrhonized with the cursor {} section of this config if you
+// # want them to match across gnome / non-gnome apps.
+spawn-at-startup "gsettings set 'org.gnome.desktop.interface' gtk-theme 'Gruvbox'"
+spawn-at-startup "gsettings set 'org.gnome.desktop.interface' icon-theme 'Material-Dark'"
+spawn-at-startup "gsettings set 'org.gnome.desktop.interface' font-name 'JetBrains Mono'"
+spawn-at-startup "gsettings set 'org.gnome.desktop.interface' cursor-theme 'Qogirr'"
+spawn-at-startup "gsettings set 'org.gnome.desktop.interface' cursor-size '12'"
 
 // ## SETUP WORKSPACE NAMES ##################################################
 workspace "scratchpad" {
@@ -43,6 +52,10 @@ workspace "virtbox" {
 }
 
 workspace "element" {
+	  open-on-output "HDMI-A-3"
+}
+
+workspace "messaging" {
 	  open-on-output "HDMI-A-3"
 }
 
@@ -93,10 +106,9 @@ input {
         // middle-emulation
     }
 
-   
     warp-mouse-to-focus
 
-    focus-follows-mouse max-scroll-amount="0%"
+    focus-follows-mouse max-scroll-amount="50%"
 }
 
 // ## OUTPUT CONFIGURATION ####################################################
@@ -185,17 +197,17 @@ layout {
     border {
         off
 
-        width 4
-	
+        width 1
+
         active-color "#ffc87f"
-	
+
         inactive-color "#505050"
-	
+
         urgent-color "#9b0000"
 
-        // active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
-	
-        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+        active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
+
+        inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
 
     shadow {
@@ -297,7 +309,7 @@ animations {
 }
 
 cursor {
-    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-theme "Qogirr"
     xcursor-size 12
     hide-when-typing
     //hide-after-inactive-ms 1000
@@ -305,7 +317,7 @@ cursor {
 
 // ## OVERVIEW SETTINGS ############################################################
 overview {
-	 backdrop-color "#566870"
+	// backdrop-color "#566870"
     	 zoom 0.625
 	 workspace-shadow {
 	 	off
@@ -316,7 +328,7 @@ overview {
 //    	# Global rules at top
 window-rule {
     default-column-width {}
-    geometry-corner-radius 15
+    geometry-corner-radius 10
     clip-to-geometry true
     draw-border-with-background false
     opacity 0.60
@@ -334,6 +346,40 @@ window-rule {
 }
 
 window-rule {
+	    match app-id="Sxiv"
+	    open-floating true
+	    open-fullscreen true
+}
+
+window-rule {
+	    match app-id="emacs"
+	    open-floating false
+	    open-maximized true
+}
+
+window-rule {
+	    match app-id="org.pwmt.zathura"
+	    open-floating true
+	    default-column-width { fixed 900; }
+	    default-window-height { fixed 900; }
+}
+
+window-rule {
+	    match app-id="qalculate-gtk"
+	    open-floating true
+	    default-column-width { fixed 400; }
+	    default-window-height { fixed 400; }
+}
+
+window-rule {
+	    match app-id="Alacritty"
+	    open-floating true
+	    default-column-width { fixed 900; }
+	    default-window-height { fixed 900; }
+}
+
+window-rule {
+	    match app-id="Spotify"
 	    match app-id="spotify"
 	    open-on-workspace "spotify"
 	    open-maximized true
@@ -364,13 +410,34 @@ window-rule {
 	    open-maximized true
 }
 
+window-rule {
+	    // match app-id="GoogleMessages"
+	    match app-id="Beeper"
+	    open-on-workspace "messaging"
+	    open-maximized true
+}
+
+window-rule {
+	    match app-id="org.kde.kdeconnect.sms"
+	    open-on-workspace "messaging"
+	    open-maximized true
+}
+
+
+window-rule {
+	    match app-id="org.gnome.Geary"
+	    open-on-workspace "messaging"
+	    open-maximized true
+}
+
+window-rule {
+	    match app-id="googlecalendardark-nativefier-e22938"
+	    open-on-workspace "messaging"
+	    open-maximized true
+}
+
 
 layer-rule {
-// This is not working the way I would like. I want the
-// wallpaper to exist and also show on the overlay.
-// When changing to "true" the wallpaper disappears.
-	   match namespace="^wallpaper$"
-	   match namespace="^waybar$"
 	   place-within-backdrop true
 }
 
@@ -389,10 +456,14 @@ binds {
     Mod+Shift+W			      { spawn "vivaldi-snapshot"; }
     Mod+Shift+N			      { spawn "pluma"; }
 
+    Mod+Shift+S			      { spawn "sh" "-c" "nirius focus -a Beeper"; }
+
     Mod+Return	      	      	      { spawn "~/.config/niri/scripts/alacritty"; }
+    // Mod+Return	      	      { spawn "~/.config/niri/scripts/kitty"; }
+    // Mod+Return	      	      { spawn "wezterm"; }
     // Mod+Return	      	      { spawn "~/.config/niri/scripts/foot"; }
-    
-    Super+Alt+L 		      { spawn "swaylock"; }
+
+    Super+Alt+L 		      { spawn "~/.config/niri/scripts/lockscreen"; }
 
     XF86AudioRaiseVolume 	      allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume 	      allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
@@ -404,10 +475,14 @@ binds {
     Mod+Q 		   	      { close-window; }
 
     Mod+P			      { spawn "~/.config/niri/scripts/send_to_scratchpad"; }
-    Mod+Shift+P			      { focus-workspace "scratchpad"; }
+    Mod+Shift+P			      { spawn "~/.config/niri/scripts/get_from_scratchpad"; }
+
+    Mod+Shift+Y			      { spawn "sh" "-c" "kitty --detach yazi"; }
+
+    Mod+Shift+M			      { focus-workspace "messaging"; }
 
     Mod+S			      { screenshot; }
-    
+
     Mod+Left  		   	      { focus-column-left; }
     Mod+Down  		   	      { focus-window-down; }
     Mod+Up    		   	      { focus-window-up; }
@@ -464,24 +539,24 @@ binds {
     // Mod+TouchpadScrollDown 	       { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02+"; }
     // Mod+TouchpadScrollUp   	       { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02-"; }
 
-    Mod+1 			       { focus-workspace 1; }
-    Mod+2 			       { focus-workspace 2; }
-    Mod+3 			       { focus-workspace 3; }
-    Mod+4 			       { focus-workspace 4; }
-    Mod+5 			       { focus-workspace 5; }
-    Mod+6 			       { focus-workspace 6; }
-    Mod+7 			       { focus-workspace 7; }
-    Mod+8 			       { focus-workspace 8; }
-    Mod+9 			       { focus-workspace 9; }
-    Mod+Ctrl+1 			       { move-column-to-workspace 1; }
-    Mod+Ctrl+2 			       { move-column-to-workspace 2; }
-    Mod+Ctrl+3 			       { move-column-to-workspace 3; }
-    Mod+Ctrl+4 			       { move-column-to-workspace 4; }
-    Mod+Ctrl+5 			       { move-column-to-workspace 5; }
-    Mod+Ctrl+6 			       { move-column-to-workspace 6; }
-    Mod+Ctrl+7 			       { move-column-to-workspace 7; }
-    Mod+Ctrl+8 			       { move-column-to-workspace 8; }
-    Mod+Ctrl+9 			       { move-column-to-workspace 9; }
+    // Mod+1 			       { focus-workspace 1; }
+    // Mod+2 			       { focus-workspace 2; }
+    // Mod+3 			       { focus-workspace 3; }
+    // Mod+4 			       { focus-workspace 4; }
+    // Mod+5 			       { focus-workspace 5; }
+    // Mod+6 			       { focus-workspace 6; }
+    // Mod+7 			       { focus-workspace 7; }
+    // Mod+8 			       { focus-workspace 8; }
+    // Mod+9 			       { focus-workspace 9; }
+    // Mod+Ctrl+1 		       { move-column-to-workspace 1; }
+    // Mod+Ctrl+2 	               { move-column-to-workspace 2; }
+    // Mod+Ctrl+3 		       { move-column-to-workspace 3; }
+    // Mod+Ctrl+4 		       { move-column-to-workspace 4; }
+    // Mod+Ctrl+5 		       { move-column-to-workspace 5; }
+    // Mod+Ctrl+6 		       { move-column-to-workspace 6; }
+    // Mod+Ctrl+7 		       { move-column-to-workspace 7; }
+    // Mod+Ctrl+8 		       { move-column-to-workspace 8; }
+    // Mod+Ctrl+9 		       { move-column-to-workspace 9; }
 
     // Mod+Ctrl+1 		       { move-window-to-workspace 1; }
 
@@ -525,7 +600,7 @@ binds {
     Mod+Shift+Ctrl+0 		       { set-window-height "1080"; }
 
     Mod+V       		       { toggle-window-floating; }
-    Mod+Shift+V 		       { switch-focus-between-floating-and-tiling; }	
+    Mod+Shift+V 		       { switch-focus-between-floating-and-tiling; }
 
     Mod+W 			       { toggle-column-tabbed-display; }
 
@@ -540,11 +615,9 @@ binds {
 
     Ctrl+Alt+Delete 		       { quit; }
 
-    // Mod+Shift+P 		       { power-off-monitors; }
-    
-    Alt+Tab			       repeat=false { spawn "niriswitcherctl" "show" "--window"; }
-    Alt+Shift+Tab 		       repeat=false { spawn "niriswitcherctl" "show" "--window"; }
-    Alt+Grave 			       repeat=false { spawn "niriswitcherctl" "show" "--workspace"; }
-    Alt+Shift+Grave 		       repeat=false { spawn "niriswitcherctl" "show" "--workspace"; }
+    // Alt+Tab			       repeat=false { spawn "niriswitcherctl" "show" "--window"; }
+    // Alt+Shift+Tab 		       repeat=false { spawn "niriswitcherctl" "show" "--window"; }
+    // Alt+Grave 			       repeat=false { spawn "niriswitcherctl" "show" "--workspace"; }
+    // Alt+Shift+Grave 		       repeat=false { spawn "niriswitcherctl" "show" "--workspace"; }
 
 }

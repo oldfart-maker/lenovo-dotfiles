@@ -1,23 +1,26 @@
 #--- APPS ---------------------------------------------------------------------------------
-Mod+Shift+Slash 		      { spawn "~/.config/niri/scripts/rofi_bindings"; }
-Mod+D 		      		      { spawn "~/.config/niri/scripts/rofi_launcher"; }
-Mod+B			      	      { spawn "~/.config/niri/scripts/rofi_bluetooth"; }
-Mod+X			      	      { spawn "~/.config/niri/scripts/rofi_powermenu"; }
-Mod+M			      	      { spawn "~/.config/niri/scripts/rofi_music"; }
-Mod+N			      	      { spawn "~/.config/niri/scripts/rofi_network"; }
+Mod+Shift+Slash 		      { spawn "rofi_bindings"; }
+Mod+D 		      		      { spawn "rofi_launcher"; }
+Mod+Shift+D			      { spawn "rofi_windows"; }
+Mod+B			      	      { spawn "rofi_bluetooth"; }
+Mod+X			      	      { spawn "rofi_powermenu"; }
+Mod+M			      	      { spawn "rofi_music"; }
+Mod+N			      	      { spawn "rofi_network"; }
 
 Mod+S			      	      { screenshot; }
 
 Mod+E			      	      { spawn "emacs"; }
 Mod+T			      	      { spawn "thunar ~/Downloads"; }
-Mod+Shift+W			      { spawn "firefox"; }
+Mod+Shift+W			      { spawn "vivaldi"; }
 Mod+Shift+N			      { spawn "pluma"; }
+Mod+Shift+Y			      { spawn "yazi"; }
+Mod+Shift+S			      { focus "beeper"; }
 
 Mod+Return	      		      { spawn "alicritty"; }
 Super+Alt+L 		      	      { spawn "swaylock"; }
 
-Mod+P				      {spawn "~/.config/niri/scripts/send_to_scratchpad"; }
-Mod+Shift+P			      {focus-workspace "scratchpad"; }
+Mod+P				      {spawn "send_to_scratchpad"; }
+Mod+Shift+P			      {spawn "get_from_scratchpad"; }
 
 #--- FOCUS WINDOW----------------------------------------------------------------------------
 Mod+Down  		   	      { focus-window-down; }
@@ -36,7 +39,6 @@ Mod+Shift+Up    	   	      { focus-monitor-up; }
 Mod+Shift+Right 	   	      { focus-monitor-right; }
 
 #--- FOCUS WORKSPACE-------------------------------------------------------------------------
-Mod+1..9			      { focus-workspace 1..9; }
 Mod+Page_Down      	              { focus-workspace-down; }
 Mod+Page_Up        	              { focus-workspace-up; }
 Mod+U              	              { focus-workspace-down; }
@@ -66,19 +68,6 @@ Mod+Ctrl+Page_Down 	              { move-column-to-workspace-down; }
 Mod+Ctrl+Page_Up   	              { move-column-to-workspace-up; }
 Mod+Ctrl+U         	              { move-column-to-workspace-down; }
 Mod+Ctrl+I         	              { move-column-to-workspace-up; }
-
-Mod+Ctrl+Shift+WheelScrollDown        { move-column-right; }
-Mod+Ctrl+Shift+WheelScrollUp          { move-column-left; }
-
-Mod+Ctrl+1 			      { move-column-to-workspace 1; }
-Mod+Ctrl+2 			      { move-column-to-workspace 2; }
-Mod+Ctrl+3 			      { move-column-to-workspace 3; }
-Mod+Ctrl+4 			      { move-column-to-workspace 4; }
-Mod+Ctrl+5 			      { move-column-to-workspace 5; }
-Mod+Ctrl+6 			      { move-column-to-workspace 6; }
-Mod+Ctrl+7 			      { move-column-to-workspace 7; }
-Mod+Ctrl+8 			      { move-column-to-workspace 8; }
-Mod+Ctrl+9 			      { move-column-to-workspace 9; }
 
 Mod+BracketLeft  		      { consume-or-expel-window-left; }
 Mod+BracketRight 		      { consume-or-expel-window-right; }
@@ -126,10 +115,6 @@ Mod+0            		      { set-column-width "960"; }
 Mod+Alt+0        		      { set-column-width "1280"; }
 Mod+Ctrl+0       		      { set-column-width "1920"; }
 Mod+Ctrl+F 			      { expand-column-to-available-width; }
-
-#--- LAYOUT --------------------------------------------------------------------------------
-Mod+Space       		      { switch-layout "next"; }
-Mod+Shift+Space 		      { switch-layout "prev"; }
 
 
 
