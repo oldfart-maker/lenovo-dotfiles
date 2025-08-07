@@ -290,6 +290,12 @@ window#waybar.empty #window {
     background-color: @selected;
 }
 
+#custom-menu {
+    color: @yellow;
+    font-size: 24px;
+    border-radius: 12px;
+}
+
 /** Common style **/
 #backlight, 
 #battery,

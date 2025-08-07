@@ -4,6 +4,6 @@
 ##
 ## Set Wallpaper in Niri
 
-WALLPAPER='/home/username/Pictures/wallpapers/nix.png'
+WALLPAPER='/home/username/Pictures/wallpapers/rubiks-cube.png'
 
 swaybg --output '*' --mode fill --image "$WALLPAPER" "-c" "#000000"

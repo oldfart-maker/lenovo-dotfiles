@@ -1,122 +1,105 @@
-#--- APPS ---------------------------------------------------------------------------------
-Mod+Shift+Slash 		      { spawn "rofi_bindings"; }
-Mod+D 		      		      { spawn "rofi_launcher"; }
-Mod+Shift+D			      { spawn "rofi_windows"; }
-Mod+B			      	      { spawn "rofi_bluetooth"; }
-Mod+X			      	      { spawn "rofi_powermenu"; }
-Mod+M			      	      { spawn "rofi_music"; }
-Mod+N			      	      { spawn "rofi_network"; }
-
-Mod+S			      	      { screenshot; }
-
-Mod+E			      	      { spawn "emacs"; }
-Mod+T			      	      { spawn "thunar ~/Downloads"; }
-Mod+Shift+W			      { spawn "vivaldi"; }
-Mod+Shift+N			      { spawn "pluma"; }
-Mod+Shift+Y			      { spawn "yazi"; }
-Mod+Shift+S			      { focus "beeper"; }
-
-Mod+Return	      		      { spawn "alicritty"; }
-Super+Alt+L 		      	      { spawn "swaylock"; }
-
-Mod+P				      {spawn "send_to_scratchpad"; }
-Mod+Shift+P			      {spawn "get_from_scratchpad"; }
-
-#--- FOCUS WINDOW----------------------------------------------------------------------------
-Mod+Down  		   	      { focus-window-down; }
-Mod+Up    		   	      { focus-window-up; }
-
-#--- FOCUS COLUMN----------------------------------------------------------------------------
-Mod+Left  		   	      { focus-column-left; }
-Mod+Right 		   	      { focus-column-right; }
-Mod+Shift+WheelScrollDown             { focus-column-right; }
-Mod+Shift+WheelScrollUp               { focus-column-left; }
-
-#--- FOCUS MONITOR---------------------------------------------------------------------------
-Mod+Shift+Left  	   	      { focus-monitor-left; }
-Mod+Shift+Down  	   	      { focus-monitor-down; }
-Mod+Shift+Up    	   	      { focus-monitor-up; }
-Mod+Shift+Right 	   	      { focus-monitor-right; }
-
-#--- FOCUS WORKSPACE-------------------------------------------------------------------------
-Mod+Page_Down      	              { focus-workspace-down; }
-Mod+Page_Up        	              { focus-workspace-up; }
-Mod+U              	              { focus-workspace-down; }
-Mod+I              	              { focus-workspace-up; }
-Mod+Tab 			      { focus-workspace-previous; }
-    
-#--- MOVE WINDOW ----------------------------------------------------------------------------
-Mod+Ctrl+Down  	   	      	      { move-window-down; }
-Mod+Ctrl+Up    	   	      	      { move-window-up; }
-
-Mod+Comma  			      { consume-window-into-column; }
-Mod+Period 			      { expel-window-from-column; }
-
-#--- MOVE COLUMN ---------------------------------------------------------------------------
-Mod+Ctrl+Left			      { move-column-left; }
-Mod+Ctrl+Right 	   	      	      { move-column-right; }
-
-Mod+Ctrl+Home 	   	      	      { move-column-to-first; }
-Mod+Ctrl+End  	   	      	      { move-column-to-last; }
-
-Mod+Shift+Ctrl+Left    	      	      { move-column-to-monitor-left; }
-Mod+Shift+Ctrl+Down    	      	      { move-column-to-monitor-down; }
-Mod+Shift+Ctrl+Up      	              { move-column-to-monitor-up; }
-Mod+Shift+Ctrl+Right   	      	      { move-column-to-monitor-right; }
-
-Mod+Ctrl+Page_Down 	              { move-column-to-workspace-down; }
-Mod+Ctrl+Page_Up   	              { move-column-to-workspace-up; }
-Mod+Ctrl+U         	              { move-column-to-workspace-down; }
-Mod+Ctrl+I         	              { move-column-to-workspace-up; }
-
-Mod+BracketLeft  		      { consume-or-expel-window-left; }
-Mod+BracketRight 		      { consume-or-expel-window-right; }
-
-Mod+C 			       	      { center-column; }
-Mod+Ctrl+C 			      { center-visible-columns; }
-
-#--- MOVE WORKSPACE ------------------------------------------------------------------------
-Mod+Shift+Page_Down		      { move-workspace-down; }
-Mod+Shift+Page_Up                     { move-workspace-up; }
-Mod+Shift+U              	      { move-workspace-down; }
-Mod+Shift+I              	      { move-workspace-up; }
-
-#--- RESIZE / OTHER WINDOW -------------------------------------------------------------------------
-Mod+Q				      { close-window; }
-
-Mod+Shift+R 		       	      { switch-preset-window-height; }
-Mod+Ctrl+R 			      { reset-window-height; }
-
-Mod+Shift+F 		       	      { fullscreen-window; }
-
-Mod+Shift+Minus 		      { set-window-height "-10%"; }
-Mod+Shift+Equal 		      { set-window-height "+10%"; }
-Mod+Shift+Ctrl+Minus 	       	      { set-window-height "-1"; }
-Mod+Shift+Ctrl+Equal 	       	      { set-window-height "+1"; }
-Mod+Shift+0      		      { set-window-height "540"; }
-    
-Mod+Shift+Alt+0  		      { set-window-height "720"; }
-Mod+Shift+Ctrl+0 		      { set-window-height "1080"; }
-
-Mod+V       		       	      { toggle-window-floating; }
-Mod+Shift+V 		       	      { switch-focus-between-floating-and-tiling; }
-
-Mod+W 				      { toggle-column-tabbed-display; }
-
-#--- RESIZE COLUMN ---------------------------------------------------------------------------
-Mod+R				      { switch-preset-column-width; }
-Mod+F (Toggle) 			      { maximize-column; }
-Mod+Ctrl+F (Toggle)		      { expand-column-to-available-width; }
-Mod+Minus 			      { set-column-width "-10%"; }
-Mod+Equal 			      { set-column-width "+10%"; }
-Mod+Ctrl+Minus 		       	      { set-column-width "-1"; }
-Mod+Ctrl+Equal 		       	      { set-column-width "+1"; }
-Mod+0            		      { set-column-width "960"; }
-Mod+Alt+0        		      { set-column-width "1280"; }
-Mod+Ctrl+0       		      { set-column-width "1920"; }
-Mod+Ctrl+F 			      { expand-column-to-available-width; }
-
-
-
-
-
+Mod+Shift+Slash                                    Niri Key Bindings
+Mod+D                                              Launcher
+Mod+B                                              Bluetooth
+Mod+M                                              Music
+Mod+N                                              Network
+Mod+Shift+D                                        Show Active Windows
+Mod+E                                              Emacs - Prod
+Mod+Shift+E                                        Emacs - Dev
+Mod+T                                              File Manager - GUI
+Mod+Shift+Y                                        File Manager - Term
+Mod+Shift+N                                        Notes
+Mod+1                                              SMS Get
+Mod+Shift+1                                        SMS Put
+Mod+2                                              Email Get
+Mod+Shift+2                                        Email Put
+Mod+P                                              Scratchpad Put
+Mod+Shift+P                                        Scratchpad Get
+Mod+Return                                         Terminal
+Mod+Alt+L                                          Lock Screen
+XF86AudioRaiseVolume allow-when-locked=true        Vol+
+XF86AudioLowerVolume allow-when-locked=true        Vol-
+XF86AudioMute allow-when-locked=true               Mute
+XF86AudioMicMute allow-when-locked=true            Mic Mute
+Mod+Shift+S                                        Screenshot Picker
+Mod+Ctrl+S                                         Screenshot Picker - Emacs
+Mod+S                                              Screenshot
+Mod+O repeat=false                                 Toggle Overview
+Mod+Q                                              Close Window
+Mod+h                                              Focus Column Left
+Mod+j                                              Focus Column Down
+Mod+k                                              Focus Window Down
+Mod+l                                              Focus Column Right
+Mod+Shift+h                                        Move Column Left
+Mod+Shift+j                                        Move Window Down
+Mod+Shift+k                                        Move Window Up
+Mod+Shift+l                                        Move Column Right
+Mod+Home                                           Focus Column First
+Mod+End                                            Focus Column Last
+Mod+Ctrl+Home                                      Move Column To First
+Mod+Ctrl+End                                       Move Column To Last
+Mod+Ctrl+h                                         Focus Monitor Left
+Mod+Ctrl+j                                         Focus Monitor Down
+Mod+Ctrl+k                                         Focus Monitor Up
+Mod+Ctrl+l                                         Focus Monitor Right
+Mod+Shift+Ctrl+h                                   Move Column To Monitor Left
+Mod+Shift+Ctrl+j                                   Move Column To Monitor Down
+Mod+Shift+Ctrl+k                                   Move Column To Monitor Up
+Mod+Shift+Ctrl+l                                   Move Column To Monitor Right
+Mod+Page_Down                                      Focus Workspace Down
+Mod+Page_Up                                        Focus Workspace Up
+Mod+U                                              Focus Workspace Down
+Mod+I                                              Focus Workspace Up
+Mod+Ctrl+Page_Down                                 Move Column To Workspace Down
+Mod+Ctrl+Page_Up                                   Move Column To Workspace Up
+Mod+Ctrl+U                                         Move Column To Workspace Down
+Mod+Ctrl+I                                         Move Column To Workspace Up
+Mod+Shift+Page_Down                                Move Workspace Down
+Mod+Shift+Page_Up                                  Move Workspace Up
+Mod+Shift+U                                        Move Workspace Down
+Mod+Shift+I                                        Move Workspace Up
+Mod+WheelScrollDown cooldown-ms=150                Focus Workspace Down
+Mod+WheelScrollUp cooldown-ms=150                  Focus Workspace Up
+Mod+Ctrl+WheelScrollDown cooldown-ms=150           Move Column To Workspace Down
+Mod+Ctrl+WheelScrollUp cooldown-ms=150             Move Column To Workspace Up
+Mod+Shift+WheelScrollDown                          Focus Column Right
+Mod+Shift+WheelScrollUp                            Focus Column Left
+Mod+Ctrl+Shift+WheelScrollDown                     Move Column Right
+Mod+Ctrl+Shift+WheelScrollUp                       Move Column Left
+Mod+Tab                                            Focus Workspace Previous
+Mod+BracketLeft                                    Consume Or Expel Window Left
+Mod+BracketRight                                   Consume Or Expel Window Right
+Mod+Comma                                          Consume Window Into Column
+Mod+Period                                         Expel Window From Column
+Mod+R                                              Switch Preset Column Width
+Mod+Shift+R                                        Switch Preset Column Height
+Mod+Ctrl+R                                         Reset Window Height
+Mod+F                                              Maximize Column
+Mod+Shift+F                                        Fullscreen Window
+Mod+Ctrl+F                                         Expand Column To Available Width
+Mod+C                                              Center Column
+Mod+Ctrl+C                                         Center Visible Columns
+Mod+Minus                                          Set Column Width -10%
+Mod+Equal                                          Set Column Width +10%
+Mod+Ctrl+Minus                                     Set Column Width -1
+Mod+Ctrl+Equal                                     Set Column Width +1
+Mod+Shift+Minus                                    Set Window Height -10%
+Mod+Shift+Equal                                    Set Window Height +10%
+Mod+Shift+Ctrl+Minus                               Set Window Height -1
+Mod+Shift+Ctrl+Equal                               Set Window Height +1
+Mod+0                                              Set Column Width
+Mod+Shift+0                                        Set Window Height 540
+Mod+Alt+0                                          Set Column Width 1280
+Mod+Shift+Alt+0                                    Set Window Height 720
+Mod+Ctrl+0                                         Set Column Width 1920
+Mod+Shift+Ctrl+0                                   Set Window Height 1080
+Mod+V                                              Toggle Window Floating
+Mod+Shift+V                                        Switch Focus Floating And Tiling
+Mod+W                                              Toggle Column Tabbed Display
+Mod+Space                                          Switch Layout - Next
+Mod+Shift+Space                                    Switch Layout - Prev
+Print                                              Screenshot
+Ctrl+Print                                         Screenshot Sreen
+Alt+Print                                          Screenshot Window
+Mod+Escape allow-inhibiting=false                  Toggle Keyboard Shortcuts - Inhibit
+Ctrl+Alt+Delete                                    Quit

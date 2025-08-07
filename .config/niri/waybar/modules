@@ -72,7 +72,7 @@
 
 // waybar-custom
     "custom/menu": {
-        "format": "漣  ",
+        "format": "  ",
         "tooltip": false,
         "on-click": "$HOME/.config/niri/scripts/rofi_launcher",
         "on-click-right": "$HOME/.config/niri/scripts/rofi_runner",
