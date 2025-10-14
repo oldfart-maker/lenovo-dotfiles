@@ -10,6 +10,3 @@ RASI="$DIR/rofi/bindings.rasi"
 cat $DIR/key_bindings.txt | rofi \
      -dmenu \
      -theme ${RASI}
-					    					    
-
-

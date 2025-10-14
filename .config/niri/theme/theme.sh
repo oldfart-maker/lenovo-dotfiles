@@ -179,7 +179,7 @@ apply_kitty() {
 	_EOF_
 
 	# reload kitty config
-	kill -SIGUSR1 $(pidof kitty)
+	# kill -SIGUSR1 $(pidof kitty)
 }
 
 ## Mako --------------------------------------
@@ -207,7 +207,7 @@ apply_mako() {
 		default-timeout=0
 	_EOF_
 
-	pkill mako && bash ${DIR}/scripts/notifications &
+	# pkill mako && bash ${DIR}/scripts/notifications &
 }
 
 ## Rofi --------------------------------------
@@ -244,7 +244,7 @@ apply_waybar() {
 		@define-color white          ${color7};
 	EOF
 
-	pkill waybar && bash ${DIR}/scripts/statusbar &
+	# pkill waybar && bash ${DIR}/scripts/statusbar &
 }
 
 ## Wofi --------------------------------------
@@ -263,21 +263,6 @@ apply_wofi() {
 		-e "s/@define-color magenta .*/@define-color magenta        ${color5};/g" \
 		-e "s/@define-color cyan .*/@define-color cyan           ${color6};/g" \
 		-e "s/@define-color white .*/@define-color white          ${color7};/g"
-}
-
-## River --------------------------------------
-apply_river() {
-	# river : theme
-	sed -i ${DIR}/init \
-		-e "s/background_color =.*/background_color = '0x${background:1}'/g" \
-		-e "s/focused_border =.*/focused_border = '0x${accent:1}'/g" \
-		-e "s/unfocused_border =.*/unfocused_border = '0x${altbackground:1}'/g" \
-		-e "s/urgent_border =.*/urgent_border = '0x${color1:1}'/g"
-	
-	# reload river config
-	riverctl border-color-focused 0x${accent:1}
-	riverctl border-color-unfocused 0x${altbackground:1}
-	riverctl border-color-urgent 0x${color1:1}
 }
 
 ## Source Theme Accordingly -----------------
@@ -299,4 +284,4 @@ apply_mako
 apply_rofi
 apply_waybar
 apply_wofi
-## apply_river
+
