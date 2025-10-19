@@ -38,5 +38,3 @@ end
 if not contains $HOME/.local/bin/python-scripts $PATH
     set PATH $HOME/.local/bin/python-scripts $PATH
 end
-
-zoxide init fish | source
