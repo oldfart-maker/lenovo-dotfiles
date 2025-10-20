@@ -1,4 +1,4 @@
-// LAST BUILD / DEPLOY: 2025-09-03 05:13:40
+// LAST BUILD / DEPLOY: 2025-08-31 06:21:18
 // ## NOTES  ###########################################################  
 // This config file has been created by emacs org babel. This was done
 // mostly as a learning experiment and to address the gaps that .kdl
@@ -190,8 +190,8 @@ layout {
     focus-ring {
                     // off
                     width 2
-                    active-color "#ba2106"
-                    inactive-color "#0f1111"
+                    active-color "#00aa7f"
+                    inactive-color "#191e25"
                     // active-gradient from="#80c8ff" to="#bbddff" angle=45 relative-to=""
                     // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
             }
@@ -316,7 +316,7 @@ window-rule {
         geometry-corner-radius 10
         clip-to-geometry true
         draw-border-with-background false
-        opacity 0.90
+        opacity 0.60
 }
 
 window-rule {
@@ -438,7 +438,7 @@ layer-rule {
 
 binds {
    Mod+Shift+Slash                                    { spawn "~/.config/niri/scripts/rofi_bindings"; }
-   Mod+Slash                                          { spawn "~/.config/niri/scripts/rofi_lobindings"; }
+   Mod+Slash                                          { spawn "~/.config/niri/scripts/rofi_lobindings"; }   
    Mod+D                                              { spawn "~/.config/niri/scripts/rofi_launcher"; }
    Mod+B                                              { spawn "~/.config/niri/scripts/rofi_bluetooth"; }
    Mod+Shift+D                                        { spawn "~/.config/niri/scripts/rofi_showwindows"; }

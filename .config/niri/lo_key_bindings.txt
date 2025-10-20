@@ -1,0 +1,272 @@
+001  Ctrl+F11                                        Activate Style Apply                 .ActivateStyleApply
+002  Ctrl+Shift+Q                                    Basic Break                          .BasicBreak
+003  Alt+Shift+B                                     Bold                                 .Bold
+004  Shift+F9                                        Calc                                 .Calc
+005  Ctrl+Num                                        Calculate Sel                        .CalculateSel
+006  Shift+F3                                        Change Case Rotate Case              .ChangeCaseRotateCase
+007  Shift+Left                                      Char Left Sel                        .CharLeftSel
+008  Shift+Right                                     Char Right Sel                       .CharRightSel
+009  Ctrl+F4                                         Close Doc                            .CloseDoc
+010  Num-                                            Collapse Section                     .CollapseSection
+011  Ctrl+Shift+C                                    Combine                              .Combine
+012  Shift+Esc                                       Command Popup                        .CommandPopup
+013  Ctrl+F10                                        Control Codes                        .ControlCodes
+014  Alt+Return                                      Control Properties                   .ControlProperties
+015  Ctrl+Shift+F2                                   Convert Selected Field               .ConvertSelectedField
+016  Alt+W                                           Copy                                 .Copy
+017  Com.Sun.Star.Frame.Startmodule                  Copy                                 .Copy
+018  Copy                                            Copy                                 .Copy
+019  Ctrl+C                                          Copy                                 .Copy
+020  Ctrl+Insert                                     Copy                                 .Copy
+021  Global                                          Copy                                 .Copy
+022  Modules                                         Copy                                 .Copy
+023  Secondarykeys                                   Copy                                 .Copy
+024  Ctrl+W                                          Cut                                  .Cut
+025  Ctrl+X                                          Cut                                  .Cut
+026  Cut                                             Cut                                  .Cut
+027  Shift+Delete                                    Cut                                  .Cut
+028  Alt+Down                                        Data Select                          .DataSelect
+029  Com.Sun.Star.Sdb.Querydesign                    DBQuery Preview                      .DBQueryPreview
+030  Shift+F12                                       Default Bullet                       .DefaultBullet
+031  F12                                             Default Numbering                    .DefaultNumbering
+032  Ctrl+K                                          Del to End of Line                   .DelToEndOfLine
+033  Alt+K                                           Del to End of Sentence               .DelToEndOfSentence
+034  Ctrl+Shift+Delete                               Del to End of Sentence               .DelToEndOfSentence
+035  Alt+D                                           Del to End of Word                   .DelToEndOfWord
+036  Ctrl+Delete                                     Del to End of Word                   .DelToEndOfWord
+037  Ctrl+Shift+Backspace                            Del to Start of Sentence             .DelToStartOfSentence
+038  Alt+Backspace                                   Del to Start of Word                 .DelToStartOfWord
+039  Ctrl+Backspace                                  Del to Start of Word                 .DelToStartOfWord
+040  Delete                                          Delete                               .Delete
+041  F11                                             Designer Dialog                      .DesignerDialog
+042  Ctrl+Alt+Shift+C                                Dismantle                            .Dismantle
+043  Ctrl+Alt+Shift+K                                Dismantle                            .Dismantle
+044  Ctrl+Alt+C                                      Edit Annotation                      .EditAnnotation
+045  Ctrl+Shift+H                                    Edit Annotation                      .EditAnnotation
+046  Ctrl+F3                                         Edit Glossary                        .EditGlossary
+047  Alt+P                                           Edit Style                           .EditStyle
+048  Ctrl+Shift+End                                  End of Document Sel                  .EndOfDocumentSel
+049  Ctrl+L                                          End of Line Sel                      .EndOfLineSel
+050  Shift+End                                       End of Line Sel                      .EndOfLineSel
+051  Ctrl+Shift+Down                                 End of Para Sel                      .EndOfParaSel
+052  Esc                                             Escape                               .Escape
+053  Ctrl+Num*                                       Execute Macro Field                  .ExecuteMacroField
+054  F3                                              Expand Glossary                      .ExpandGlossary
+055  Num                                             Expand Section                       .ExpandSection
+056  Ctrl+F9                                         Fieldnames                           .Fieldnames
+057  Ctrl+Quoteright                                 Fill Single Edit                     .FillSingleEdit
+058  Ctrl+Alt+Home                                   First Record                         .FirstRecord
+059  Alt+C                                           Font Dialog                          .FontDialog
+060  Ctrl+Shift+L                                    Form Filter                          .FormFilter
+061  Ctrl+Shift+G                                    Format Group                         .FormatGroup
+062  Ctrl+Alt+Shift+G                                Format Ungroup                       .FormatUngroup
+063  Ctrl+Meta+F                                     Full Screen                          .FullScreen
+064  Ctrl+Shift+J                                    Full Screen                          .FullScreen
+065  Ctrl+N                                          Go Down                              .GoDown
+066  Down                                            Go Down                              .GoDown
+067  Ctrl+B                                          Go Left                              .GoLeft
+068  Left                                            Go Left                              .GoLeft
+069  Ctrl+F                                          Go Right                             .GoRight
+070  Right                                           Go Right                             .GoRight
+071  Ctrl+End                                        Go to End of Doc                     .GoToEndOfDoc
+072  Ctrl+E                                          Go to End of Line                    .GoToEndOfLine
+073  End                                             Go to End of Line                    .GoToEndOfLine
+074  Ctrl+Down                                       Go to Next Para                      .GoToNextPara
+075  Alt+F                                           Go to Next Word                      .GoToNextWord
+076  Ctrl+Right                                      Go to Next Word                      .GoToNextWord
+077  Alt+B                                           Go to Prev Word                      .GoToPrevWord
+078  Ctrl+Left                                       Go to Prev Word                      .GoToPrevWord
+079  Ctrl+Home                                       Go to Start of Doc                   .GoToStartOfDoc
+080  Ctrl+A                                          Go to Start of Line                  .GoToStartOfLine
+081  Home                                            Go to Start of Line                  .GoToStartOfLine
+082  Alt+PageDown                                    Go to Start of Next Page             .GoToStartOfNextPage
+083  Alt+Shift+PageDown                              Go to Start of Next Page Sel         .GoToStartOfNextPageSel
+084  Ctrl+Up                                         Go to Start of Para                  .GoToStartOfPara
+085  Alt+PageUp                                      Go to Start of Prev Page             .GoToStartOfPrevPage
+086  Alt+Shift+PageUp                                Go to Start of Prev Page Sel         .GoToStartOfPrevPageSel
+087  Ctrl+P                                          Go Up                                .GoUp
+088  Up                                              Go Up                                .GoUp
+089  Ctrl+G                                          Goto Page                            .GotoPage
+090  Ctrl+Shift+F5                                   Goto Page                            .GotoPage
+091  F4                                              Graphic Dialog                       .GraphicDialog
+092  Ctrl+9                                          Grow                                 .Grow
+093  Ctrl+Bracketright                               Grow                                 .Grow
+094  Ctrl+Shift+9                                    Grow                                 .Grow
+095  Ctrl+Shift+Point                                Grow                                 .Grow
+096  Ctrl+Shift+F7                                   Hangul Hanja Conversion              .HangulHanjaConversion
+097  Ctrl+Alt+K                                      Hyperlink Dialog                     .HyperlinkDialog
+098  Com.Sun.Star.Sheet.Spreadsheetdocument          Insert Cell                          .InsertCell
+099  Ctrl+Shift+Num                                  Insert Cell                          .InsertCell
+100  Ctrl+Shift+Return                               Insert Column Break                  .InsertColumnBreak
+101  Ctrl+Comma                                      Insert Current Date                  .InsertCurrentDate
+102  Ctrl+Point                                      Insert Current Date                  .InsertCurrentDate
+103  Ctrl+Semicolon                                  Insert Current Date                  .InsertCurrentDate
+104  Ctrl+Colon                                      Insert Current Time                  .InsertCurrentTime
+105  Ctrl+F2                                         Insert Field                         .InsertField
+106  F2                                              Insert Formula                       .InsertFormula
+107  Ctrl+Shift+Num-                                 Insert Hard Hyphen                   .InsertHardHyphen
+108  Shift+Return                                    Insert Linebreak                     .InsertLinebreak
+109  Insert                                          Insert Mode                          .InsertMode
+110  Alt+Shift+Space                                 Insert Narrow Nobreak Space          .InsertNarrowNobreakSpace
+111  Ctrl+Shift+Space                                Insert Non Breaking Space            .InsertNonBreakingSpace
+112  Alt+Shift+E                                     Insert Object Star Math              .InsertObjectStarMath
+113  Ctrl+Return                                     Insert Pagebreak                     .InsertPagebreak
+114  Return                                          Insert Para                          .InsertPara
+115  Ctrl+Num-                                       Insert Soft Hyphen                   .InsertSoftHyphen
+116  Ctrl+F12                                        Insert Table                         .InsertTable
+117  Ctrl+I                                          Italic                               .Italic
+118  Ctrl+PageDown                                   Jump to Footer                       .JumpToFooter
+119  Ctrl+Shift+E                                    Jump to Footnote Or Anchor           .JumpToFootnoteOrAnchor
+120  Ctrl+PageUp                                     Jump to Header                       .JumpToHeader
+121  Shift+F4                                        Jump to Next Frame                   .JumpToNextFrame
+122  Ctrl+Tab                                        Jump to Next Table                   .JumpToNextTable
+123  Meta+Tab                                        Jump to Next Table                   .JumpToNextTable
+124  Tab                                             Jump to Next Unprotected             .JumpToNextUnprotected
+125  Ctrl+Shift+Tab                                  Jump to Prev Table                   .JumpToPrevTable
+126  Meta+Shift+Tab                                  Jump to Prev Table                   .JumpToPrevTable
+127  Shift+Tab                                       Jump to Previous Unprotected         .JumpToPreviousUnprotected
+128  Ctrl+J                                          Justify Para                         .JustifyPara
+129  Ctrl+Alt+End                                    Last Record                          .LastRecord
+130  Shift+Down                                      Line Down Sel                        .LineDownSel
+131  Shift+Up                                        Line Up Sel                          .LineUpSel
+132  Alt+F11                                         Macro Dialog                         .MacroDialog
+133  Alt+Shift+U                                     Mark Precedents                      .MarkPrecedents
+134  Ctrl+F8                                         Marks                                .Marks
+135  Alt+Shift+Down                                  Move Down                            .MoveDown
+136  Ctrl+Alt+Down                                   Move Down                            .MoveDown
+137  Alt+Shift+Home                                  Move Page First                      .MovePageFirst
+138  Alt+Shift+End                                   Move Page Last                       .MovePageLast
+139  Alt+Shift+Up                                    Move Up                              .MoveUp
+140  Ctrl+Alt+Up                                     Move Up                              .MoveUp
+141  F5                                              Navigator                            .Navigator
+142  Ctrl+Shift+N                                    New Doc                              .NewDoc
+143  Ctrl+Alt+PageDown                               Next Annotation                      .NextAnnotation
+144  Ctrl+Alt+Right                                  Next Record                          .NextRecord
+145  Ctrl+Shift+4                                    Number Format Currency               .NumberFormatCurrency
+146  Meta+Shift+4                                    Number Format Currency               .NumberFormatCurrency
+147  Ctrl+Shift+3                                    Number Format Date                   .NumberFormatDate
+148  Meta+Shift+3                                    Number Format Date                   .NumberFormatDate
+149  Ctrl+Shift+1                                    Number Format Decimal                .NumberFormatDecimal
+150  Meta+Shift+1                                    Number Format Decimal                .NumberFormatDecimal
+151  Ctrl+Shift+5                                    Number Format Percent                .NumberFormatPercent
+152  Meta+Shift+5                                    Number Format Percent                .NumberFormatPercent
+153  Ctrl+Shift+2                                    Number Format Scientific             .NumberFormatScientific
+154  Meta+Shift+2                                    Number Format Scientific             .NumberFormatScientific
+155  Ctrl+Shift+6                                    Number Format Standard               .NumberFormatStandard
+156  Meta+Shift+6                                    Number Format Standard               .NumberFormatStandard
+157  Open                                            Open                                 .Open
+158  Ctrl+O                                          Open From Writer                     .OpenFromWriter
+159  Alt+F12                                         Options Tree Dialog                  .OptionsTreeDialog
+160  Alt+Shift+Left                                  Outline Left                         .OutlineLeft
+161  Alt+Shift+Right                                 Outline Right                        .OutlineRight
+162  Alt+Shift+P                                     Page Dialog                          .PageDialog
+163  PageDown                                        Page Down                            .PageDown
+164  Shift+PageDown                                  Page Down Sel                        .PageDownSel
+165  PageUp                                          Page Up                              .PageUp
+166  Shift+PageUp                                    Page Up Sel                          .PageUpSel
+167  Ctrl+Shift+A                                    Para Left to Right                   .ParaLeftToRight
+168  Ctrl+Shift+D                                    Para Right to Left                   .ParaRightToLeft
+169  Ctrl+V                                          Paste                                .Paste
+170  Ctrl+Y                                          Paste                                .Paste
+171  Paste                                           Paste                                .Paste
+172  Shift+Insert                                    Paste                                .Paste
+173  Ctrl+Shift+V                                    Paste Special                        .PasteSpecial
+174  Ctrl+Alt+Shift+V                                Paste Unformatted                    .PasteUnformatted
+175  Ctrl+Alt+Shift+P                                Pixel Mode                           .PixelMode
+176  Ctrl+Alt+Left                                   Prev Record                          .PrevRecord
+177  Ctrl+Alt+PageUp                                 Previous Annotation                  .PreviousAnnotation
+178  Ctrl+Shift+O                                    Print Preview                        .PrintPreview
+179  Alt+F4                                          Quit                                 .Quit
+180  Ctrl+Q                                          Quit                                 .Quit
+181  Com.Sun.Star.Sdb.Datasourcebrowser              Rec Search                           .RecSearch
+182  Com.Sun.Star.Sdb.Tabledataview                  Rec Search                           .RecSearch
+183  Ctrl+Shift+Z                                    Redo                                 .Redo
+184  Ctrl+Shift+F12                                  Remove Bullets                       .RemoveBullets
+185  Ctrl+Shift+X                                    Remove Direct Char Formats           .RemoveDirectCharFormats
+186  Ctrl+Shift+Y                                    Repeat                               .Repeat
+187  Ctrl+Shift+F                                    Repeat Search                        .RepeatSearch
+188  Ctrl+M                                          Reset Attributes                     .ResetAttributes
+189  Meta+M                                          Reset Attributes                     .ResetAttributes
+190  Ctrl+Shift+T                                    Reset Table Protection               .ResetTableProtection
+191  Alt+Shift+F5                                    Restore Editing View                 .RestoreEditingView
+192  Shift+F5                                        Restore Editing View                 .RestoreEditingView
+193  Ctrl+R                                          Right Para                           .RightPara
+194  Ctrl+Shift+R                                    Ruler                                .Ruler
+195  Ctrl+Shift+S                                    Save As                              .SaveAs
+196  Ctrl+Alt+B                                      Search Dialog                        .SearchDialog
+197  Ctrl+Alt+F                                      Search Dialog                        .SearchDialog
+198  Ctrl+H                                          Select All                           .SelectAll
+199  Meta+Shift+Space                                Select All                           .SelectAll
+200  Primarykeys                                     Select All                           .SelectAll
+201  Ctrl+T                                          Select All Labels                    .SelectAllLabels
+202  Ctrl+Space                                      Select Column                        .SelectColumn
+203  Meta+Space                                      Select Column                        .SelectColumn
+204  Com.Sun.Star.Report.Reportdefinition            Select Report                        .SelectReport
+205  Shift+Space                                     Select Row                           .SelectRow
+206  Ctrl+Shift+I                                    Select Text Mode                     .SelectTextMode
+207  F8                                              Selection Cycle                      .SelectionCycle
+208  Alt+Shift+F8                                    Selection Mode Block                 .SelectionModeBlock
+209  Com.Sun.Star.Sdb.Formdesign                     Selection Mode Block                 .SelectionModeBlock
+210  Ctrl+Shift+F8                                   Selection Mode Block                 .SelectionModeBlock
+211  Ctrl+Shift+M                                    Set Default                          .SetDefault
+212  Meta+Shift+M                                    Set Default                          .SetDefault
+213  Alt+F8                                          Set Ext Selection                    .SetExtSelection
+214  Shift+F8                                        Set Multi Selection                  .SetMultiSelection
+215  Shift+Backspace                                 Shift Backspace                      .ShiftBackspace
+216  Ctrl+8                                          Shrink                               .Shrink
+217  Ctrl+Bracketleft                                Shrink                               .Shrink
+218  Ctrl+Shift+8                                    Shrink                               .Shrink
+219  Ctrl+Shift+Comma                                Shrink                               .Shrink
+220  Ctrl+F5                                         Sidebar                              .Sidebar
+221  Alt+8                                           Sidebar Deck.A11y Check Deck         .SidebarDeck.A11yCheckDeck
+222  Alt+9                                           Sidebar Deck.Find Deck               .SidebarDeck.FindDeck
+223  Alt+3                                           Sidebar Deck.Gallery Deck            .SidebarDeck.GalleryDeck
+224  Alt+6                                           Sidebar Deck.Inspector Deck          .SidebarDeck.InspectorDeck
+225  Alt+4                                           Sidebar Deck.Navigator Deck          .SidebarDeck.NavigatorDeck
+226  Alt+1                                           Sidebar Deck.Property Deck           .SidebarDeck.PropertyDeck
+227  Alt+2                                           Sidebar Deck.Style List Deck         .SidebarDeck.StyleListDeck
+228  Alt+7                                           Sidebar Deck.Sw Manage Changes Deck  .SidebarDeck.SwManageChangesDeck
+229  Alt+5                                           Sidebar Deck.Writer Page Deck        .SidebarDeck.WriterPageDeck
+230  Ctrl+Shift+K                                    Small Caps                           .SmallCaps
+231  Shift+F7                                        Spell Online                         .SpellOnline
+232  Ctrl+Shift+Semicolon                            Spelling and Grammar Dialog          .SpellingAndGrammarDialog
+233  F7                                              Spelling and Grammar Dialog          .SpellingAndGrammarDialog
+234  Ctrl+Shift+Home                                 Start of Document Sel                .StartOfDocumentSel
+235  Shift+Home                                      Start of Line Sel                    .StartOfLineSel
+236  Ctrl+Shift+Up                                   Start of Para Sel                    .StartOfParaSel
+237  Shift+F11                                       Style New By Example                 .StyleNewByExample
+238  Ctrl+Shift+F11                                  Style Update By Example              .StyleUpdateByExample
+239  Ctrl+Numbersign                                 Sub Script                           .SubScript
+240  Ctrl+Shift+B                                    Sub Script                           .SubScript
+241  Ctrl+Shift+P                                    Super Script                         .SuperScript
+242  Backspace                                       Sw Backspace                         .SwBackspace
+243  Ctrl+F7                                         Thesaurus Dialog                     .ThesaurusDialog
+244  Com.Sun.Star.Script.Basicide                    Toggle Comment                       .ToggleComment
+245  Alt+Point                                       Toggle Formula                       .ToggleFormula
+246  Ctrl+Quoteleft                                  Toggle Formula                       .ToggleFormula
+247  Meta+Quoteleft                                  Toggle Formula                       .ToggleFormula
+248  Ctrl+S                                          Underline                            .Underline
+249  Ctrl+Shift+U                                    Underline                            .Underline
+250  Ctrl+U                                          Underline                            .Underline
+251  Ctrl+D                                          Underline Double                     .UnderlineDouble
+252  Com.Sun.Star.Chart2.Chartdocument               Undo                                 .Undo
+253  Com.Sun.Star.Drawing.Drawingdocument            Undo                                 .Undo
+254  Com.Sun.Star.Formula.Formulaproperties          Undo                                 .Undo
+255  Com.Sun.Star.Presentation.Presentationdocument  Undo                                 .Undo
+256  Com.Sun.Star.Sdb.Textreportdesign               Undo                                 .Undo
+257  Com.Sun.Star.Text.Globaldocument                Undo                                 .Undo
+258  Com.Sun.Star.Text.Textdocument                  Undo                                 .Undo
+259  Com.Sun.Star.Text.Webdocument                   Undo                                 .Undo
+260  Com.Sun.Star.Xforms.Xmlformdocument             Undo                                 .Undo
+261  Ctrl+Num/                                       Undo                                 .Undo
+262  Ctrl+Z                                          Undo                                 .Undo
+263  Undo                                            Undo                                 .Undo
+264  Alt+X                                           Unicode Notation Toggle              .UnicodeNotationToggle
+265  Ctrl+Alt+X                                      Unicode Notation Toggle              .UnicodeNotationToggle
+266  F9                                              Update Fields                        .UpdateFields
+267  Ctrl+Shift+F9                                   Update Input Fields                  .UpdateInputFields
+268  Ctrl+Shift+F4                                   View Data Source Browser             .ViewDataSourceBrowser
+269  Ctrl+Shift+Left                                 Word Left Sel                        .WordLeftSel
+270  Ctrl+Shift+Right                                Word Right Sel                       .WordRightSel
+271  Ctrl+Shift+PageDown                             Zoom Minus                           .ZoomMinus
+272  Ctrl+Shift+PageUp                               Zoom Plus                            .ZoomPlus

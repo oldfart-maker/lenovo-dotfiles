@@ -1,0 +1,6 @@
+(undo-tree-save-format-version . 1)
+"c01c353a046b24a5eb64f582109274465eb732bd"
+[nil nil nil nil (26868 4162 205560 876000) 0 nil]
+([nil nil ((#("#!/usr/bin/env bash" 0 1 (face font-lock-comment-delimiter-face fontified t) 1 11 (face font-lock-comment-face fontified t) 11 14 (face font-lock-keyword-face fontified t) 14 19 (face font-lock-comment-face fontified t)) . 1) (undo-tree-id0 . -19) (t 26695 22592 371139 578000)) nil (26868 4162 205559 903000) 0 nil])
+([nil current ((1 . 2)) nil (26868 4162 205546 479000) 0 nil])
+nil
